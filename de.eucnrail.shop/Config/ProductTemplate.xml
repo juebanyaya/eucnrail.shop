@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
+  <product>
+    <id_manufacturer></id_manufacturer>
+    <id_category_default></id_category_default>
+    <id_tax_rules_group></id_tax_rules_group>
+    <id_shop_default><![CDATA[1]]></id_shop_default>
+    <reference></reference>
+    <available_for_order><![CDATA[1]]></available_for_order>
+    <state><![CDATA[1]]></state>
+    <ecotax><![CDATA[0.000000]]></ecotax>
+    <minimal_quantity><![CDATA[1]]></minimal_quantity>
+    <price></price>
+    <wholesale_price><![CDATA[]]></wholesale_price>
+    <!-- 
+	<unit_price_ratio><![CDATA[0.000000]]></unit_price_ratio>
+	<additional_shipping_cost><![CDATA[0.00]]></additional_shipping_cost>
+	<customizable><![CDATA[0]]></customizable>
+	<text_fields><![CDATA[0]]></text_fields>
+	<uploadable_files><![CDATA[0]]></uploadable_files>
+	-->
+    <active><![CDATA[1]]></active>
+    <low_stock_threshold><![CDATA[5]]></low_stock_threshold>
+    <low_stock_alert><![CDATA[1]]></low_stock_alert>
+    <condition><![CDATA[new]]></condition>
+    <show_price><![CDATA[1]]></show_price>
+    <indexed><![CDATA[0]]></indexed>
+    <meta_description>
+      <language id="4"></language>
+    </meta_description>
+    <meta_title>
+      <language id="4"></language>
+    </meta_title>
+    <link_rewrite>
+      <language id="4"></language>
+    </link_rewrite>
+    <name>
+      <language id="4"></language>
+    </name>
+    <description>
+      <language id="4"></language>
+    </description>
+    <description_short>
+      <language id="4"></language>
+    </description_short>
+    <associations>
+      <categories nodeType="category" api="categories">
+      </categories>
+      <product_features nodeType="product_feature" api="product_features">
+        <product_feature>
+          <id>
+          </id>
+          <id_feature_value>
+          </id_feature_value>
+        </product_feature>
+      </product_features>
+    </associations>
+  </product>
+</prestashop>
