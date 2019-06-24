@@ -71,6 +71,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="php\AddImage.php" />
+    <None Include="php\UploadImage.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\ProductPriceUpdate.xml">
