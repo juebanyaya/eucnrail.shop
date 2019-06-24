@@ -8,7 +8,6 @@ namespace de.eucnrail.shop
         public static string FEATURE_ORIGIN_ID = "10";
         public static string FOOD_TAX_ID = "3";
         public static string DEFAULT_TAX_ID = "64";
-        internal static string PRODUCT_PRICE_TEMPLATE_File;
 
         public string Key { get; set; }
         public string RootUrl { get; set; }
