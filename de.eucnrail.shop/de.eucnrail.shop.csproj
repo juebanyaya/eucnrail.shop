@@ -75,9 +75,6 @@
     <None Include="php\UploadImage.php" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\ProductPriceUpdate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Config\ProductTemplate.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
