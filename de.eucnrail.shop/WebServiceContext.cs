@@ -97,7 +97,23 @@ namespace de.eucnrail.shop
                 throw new ArgumentNullException(category, string.Format("Category '{0}' Not Found, please verify, the category exists in target system!", category));
             }
             id = node.InnerText;
-            log.Debug("GetmanufacturerId: id = " + id);
+            log.Debug("GetCategoryId: id = " + id);
+            return id;
+        }
+
+
+        public string GetLanguageCNId() {
+            string id;
+            WebRequest request = CreateWebRequest(REQUEST_METHOD_GET, shop.GetServiceUrlWithFilter("languages", "name", "中文 (Simplified Chinese)"), CONTENT_TYP_XML, null);
+            XmlDocument xml = GetXmlResponse(request);
+            XmlNode node = xml.SelectSingleNode("//prestashop/languages/language/id");
+            if (node == null)
+            {
+                log.Error(string.Format("GetLanguageCNId: Language '{0}' Not Found", "CN"));
+                throw new ArgumentNullException("language", string.Format("Category '{0}' Not Found, please verify, the category exists in target system!", "CN"));
+            }
+            id = node.InnerText;
+            log.Debug("GetLanguageCNId: id = " + id);
             return id;
         }
 
@@ -142,9 +158,14 @@ namespace de.eucnrail.shop
         public void TransmitProduct(Product product)
         {
             log.Info("TransmitProduct: Product transfer enter...");
+
+            string id = GetProductIdByReferenceId(product.Reference);
+            if (!string.Empty.Equals(id))
+                throw new ArgumentException("reference id", string.Format("The Reference id {0} exists in system!!", product.Reference));
             product.OriginId = GetOriginId(product.Origin);
             product.BrandId = GetmanufacturerId(product.Brand);
             product.DefaultCategoryNr = GetCategoryId(product.DefaultCategory);
+            product.LanguageCNId = GetLanguageCNId();
 
             string[] ids = new string[product.Categories.Length];
             for (int i = 0 ; i<product.Categories.Length;  i++)

@@ -18,18 +18,20 @@ namespace de.eucnrail.shop
                 rootShop.Key = "3F6H9C9I8XEUQ3HGSEWPYWCEUF7G6DGE";
 
                 product.Name = "爱他美婴幼儿奶粉";
-                product.Description = "<p>爱他美婴幼儿奶粉 Pre段(0-6个月)800g</p>";
+                product.Description = "爱他美婴幼儿奶粉 Pre段(0-6个月)800g";
                 product.Price = "17.99";
-                product.Reference = "0002";
+                product.Reference = "0001";
                 product.DefaultCategory = "主页";
                 product.Categories = new string[] {"母婴玩具", "食品保健"};
                 product.Origin = "德国";
                 product.Brand = "Aptamil";
                 product.TaxId = RootShop.FOOD_TAX_ID; //RootShop.DEFAULT_TAX_ID
-                string url = "";
-                //test.CreateProduct(product, rootShop);
-                //test.UploadImage(product.Reference, url, rootShop);
-                test.UpdateProductPrice(product.Reference, rootShop);
+                
+                string url = "http://39.97.167.36:8006/data/upload/shop/store/goods/5/5_05717788550858139_360.jpg";
+                test.CreateProduct(product, rootShop);
+                
+                test.UploadImage(product.Reference, url, rootShop);
+                //test.UpdateProductPrice(product.Reference, rootShop);
             }
             catch (Exception ex)
             {
@@ -51,11 +53,7 @@ namespace de.eucnrail.shop
         public void CreateProduct(Product product, RootShop rootShop) {
             log.Info("============================== PRODUCT TRANSFER START ==============================");
             WebServiceContext webserviceContext = new WebServiceContext(rootShop);
-            string id = webserviceContext.GetProductIdByReferenceId(product.Reference);
-            if (string.Empty.Equals(id))
                 webserviceContext.TransmitProduct(product);
-            else
-                throw new ArgumentException("reference id", string.Format("The Reference id {0} exists in system!!", product.Reference));
             log.Info("=============================== PRODUCT TRANSFER END ===============================");
 
         }

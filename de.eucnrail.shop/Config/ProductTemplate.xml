@@ -26,22 +26,20 @@
     <show_price><![CDATA[1]]></show_price>
     <indexed><![CDATA[0]]></indexed>
     <meta_description>
-      <language id="4"></language>
+      <language id="1"></language>
     </meta_description>
     <meta_title>
-      <language id="4"></language>
+      <language id="1"></language>
     </meta_title>
     <link_rewrite>
-      <language id="4"></language>
+      <language id="1"></language>
     </link_rewrite>
     <name>
-      <language id="4"></language>
     </name>
     <description>
-      <language id="4"></language>
     </description>
     <description_short>
-      <language id="4"></language>
+      <language id="1"></language>
     </description_short>
     <associations>
       <categories nodeType="category" api="categories">

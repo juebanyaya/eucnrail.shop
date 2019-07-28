@@ -5,9 +5,9 @@ namespace de.eucnrail.shop
     public class RootShop
     {
         public static string PRODUCT_TEMPLATE_File = "Config/ProductTemplate.xml";
-        public static string FEATURE_ORIGIN_ID = "10";
+        public static string FEATURE_ORIGIN_ID = "5";
         public static string FOOD_TAX_ID = "3";
-        public static string DEFAULT_TAX_ID = "64";
+        //public static string DEFAULT_TAX_ID = "64";
 
         public string Key { get; set; }
         public string RootUrl { get; set; }
