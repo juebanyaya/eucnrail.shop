@@ -60,9 +60,13 @@ namespace de.eucnrail.shop
             log.Info("CreateOrigin: enter...");
             XmlDocument doc = GetBlackTemplate("product_feature_values");
             doc.SelectSingleNode("//prestashop/product_feature_value/id_feature").AppendChild(doc.CreateCDataSection("6"));
-            doc.SelectSingleNode("//prestashop/product_feature_value/value/language").AppendChild(doc.CreateCDataSection(origin));
+            XmlNodeList nodes = doc.SelectNodes("//prestashop/product_feature_value/value/language");
+            foreach (XmlNode node in nodes) {
+                node.AppendChild(doc.CreateCDataSection(origin));
+            }
             string content = doc.OuterXml;
             WebRequest req = CreateWebRequest("POST", shop.GetServiceUrl("product_feature_values"), CONTENT_TYP_XML, content);
+            log.Debug(content);
             GetResponse(req);
             log.Info("CreateOrigin: Leave");
         }
